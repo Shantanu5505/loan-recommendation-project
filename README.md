@@ -1,114 +1,101 @@
 # Loan Recommendation Project
 
-A machine learning-based web application that predicts whether a loan application is likely to be **Approved** or **Rejected** using applicant details.
+A machine-learning-based web application that estimates whether a loan application is likely to be approved or rejected using applicant-provided information.
 
 ## Project Overview
 
-This project combines a trained machine learning model with a Flask web application. Users enter applicant information such as income, loan amount, credit history, education, employment status, and property area. The application processes the input and displays the predicted loan status.
+This project combines a trained machine learning model with a Flask web application. Users enter applicant details, the application prepares the input features, and the model returns a predicted loan status.
 
 ## Features
 
-- Simple web interface for entering loan applicant details
-- Machine learning-based loan approval prediction
-- Flask backend for handling requests
-- Pre-trained model loaded using Pickle
-- Log transformation of income, loan amount, and loan term features
-- Prediction result displayed as Approved or Rejected
+- Web form for entering applicant information
+- Machine-learning-based loan status prediction
+- Flask application backend
+- Pre-trained model loaded with Pickle
+- Log transformation of selected income, loan amount and loan-term features
+- Prediction result displayed in the web interface
 
-## Technologies Used
+## Technology Stack
 
 - Python
 - Flask
 - NumPy
-- Pickle
+- Scikit-learn / serialized model
 - Jupyter Notebook
 - HTML and CSS
-- Machine Learning
 
-## Project Structure
+## Input Features
+
+The model workflow uses applicant attributes such as:
+
+- Gender, marital status and dependents
+- Education and self-employment status
+- Applicant and co-applicant income
+- Loan amount and loan term
+- Credit history
+- Property area
+
+## Repository Structure
 
 ```text
 loan-recommendation-project/
-│
 ├── app.py
 ├── loan prediction.ipynb
 ├── model.pkl
 ├── requirements.txt
 ├── README.md
-│
 └── templates/
     ├── index.html
     └── prediction.html
 ```
 
-## Input Features
+## Run Locally
 
-The application uses the following applicant details:
+1. Clone the repository:
 
-- Gender
-- Marital status
-- Number of dependents
-- Education
-- Self-employment status
-- Applicant income
-- Co-applicant income
-- Loan amount
-- Loan amount term
-- Credit history
-- Property area
+   ```bash
+   git clone https://github.com/Shantanu5505/loan-recommendation-project.git
+   cd loan-recommendation-project
+   ```
 
-## How to Run the Project
+2. Install dependencies:
 
-### 1. Clone the repository
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-git clone https://github.com/Shantanu5505/loan-recommendation-project.git
-cd loan-recommendation-project
-```
+3. Start the Flask application:
 
-### 2. Install the dependencies
+   ```bash
+   python app.py
+   ```
 
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the Flask application
-
-```bash
-python app.py
-```
-
-### 4. Open the application
-
-Open the local URL shown in the terminal, usually:
-
-```text
-http://127.0.0.1:5000/
-```
+4. Open the local address printed by Flask (commonly `http://127.0.0.1:5000/`).
 
 ## Prediction Workflow
 
-1. Enter the applicant details.
-2. Submit the loan application form.
-3. The Flask application encodes the input values.
-4. Numerical features are transformed and passed to the trained model.
-5. The model predicts the loan status.
-6. The result is displayed as Approved or Rejected.
+1. Enter applicant details in the form.
+2. Submit the form to the Flask backend.
+3. The application prepares and transforms the input features.
+4. The trained model generates a prediction.
+5. The result is displayed on the result page.
+
+## Screenshots
+
+The repository includes three interface screenshots: [1.PNG](1.PNG), [2.PNG](2.PNG) and [3.PNG](3.PNG).
 
 ## Future Improvements
 
-- Add model performance metrics such as accuracy, precision, recall, and F1-score
-- Add data validation and error handling
-- Improve the user interface and responsiveness
-- Deploy the application online
-- Add explainable AI to show the factors influencing the prediction
+- Add evaluation metrics such as precision, recall, F1-score and confusion matrix
+- Add input validation and clearer error handling
+- Document the training dataset, preprocessing and model selection
+- Add explainability to communicate factors influencing a prediction
+- Add automated tests and deployment instructions
 
-## Disclaimer
+## Responsible Use
 
-This project is developed for educational and demonstration purposes. Its predictions should not be used as the sole basis for real financial decisions.
+This is an educational demonstration. A model prediction is not a credit decision and must not be used as the sole basis for real lending decisions. Real lending requires validated models, fairness testing, regulatory compliance and human oversight.
 
 ## Author
 
-**Shantanu Dhatrak**
-
-GitHub: [Shantanu5505](https://github.com/Shantanu5505)
+**Shantanu Dhatrak** · [GitHub](https://github.com/Shantanu5505)
